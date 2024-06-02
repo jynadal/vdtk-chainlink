@@ -14,13 +14,20 @@
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@aws-amplify/auth": "^6.3.4",
+    "add": "^2.0.6",
     "astro": "^4.9.2",
+    "aws-amplify": "^6.3.4",
     "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.12.1",
     "katex": "^0.16.10",
+    "moralis": "^2.26.2",
     "prismjs": "^1.29.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
-    "shiki": "^1.6.1"
+    "shiki": "^1.6.1",
+    "web3uikit": "^1.0.4"
   },
   "devDependencies": {
     "daisyui": "^4.11.1",

@@ -1,8 +1,7 @@
-# 🧊 First Thanks to Frosti for this awesome Astro template.
+# VDTK is a Start-UP project for Proof Of Reserve of Video Tapes, DVDs or all physical's movies supports.
 
-**A clean, elegant, and fast static blog template! Developed with [Astro](https://astro.build/)!**
-
-[**🖥️ Frosti Demo**](https://frosti.saroprock.com)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**🌏 中文 README**](https://github.com/EveSunMaple/Frosti/blob/main/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**❤️My Blog**](https://www.saroprock.com)
+---
+Vote on this project on Devpost: https://devpost.com/software/vdtk/joins/PMAHqit7g-V6FRJsNtNTPw
 
 > [!NOTE]
 > For a better reading experience, please visit -> https://frosti.saroprock.com
@@ -27,88 +26,24 @@ This one is for Chainlink Block Magic 2024 Hackathon
 
 - ✅ **Light** / **Dark** mode available
 - ✅ Various components for enriching article content
-  - Diverse alerts
-  - Code block copy buttons
-  - More content supported by [daisyUI](https://daisyui.com/)……
 - ✅ Various components for enriching page content
-  - Timeline component
-  - Friends card component
-- ✅ Comment system built with [Waline](https://waline.js.org/)
 - ✅ Beautiful pages built with [Tailwind CSS](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/)
 
 > [!NOTE]
-> The comment system needs to be configured by oneself, please refer to [Waline](https://waline.js.org/) Change `src\components\Comment.astro`.
+> There is 2 Github repos on my account:
 
-## 🚀 Project Structure
+    - https://github.com/jynadal/vdtk-chainlink for front-end
+    - https://github.com/jynadal/vdtk-chainlink-backEnd for back-end
 
-```sh
-\ASTRO-VDTK-CHAINLINK
-├── astro.config.mjs
-├── categories.txt
-├── package-lock.json
-├── package.json
-├── pnpm-lock.yaml
-├── public
-|  ├── favicon.svg
-|  ├── fonts
-|  |  └── CascadiaCode.woff2
-|  ├── home.webp
-|  ├── MinLogoVDTK.png
-|  ├── MinLogoVDTK.ico
-|  └── view.png
-├── README.md
-├── README.zh-CN.md
-├── src
-|  ├── components
-|  |  ├── BaseCard.astro
-|  |  ├── BaseHead.astro
-|  |  ├── blog
-|  |  |  ├── error.astro
-|  |  |  ├── info.astro
-|  |  |  ├── success.astro
-|  |  |  └── warning.astro
-|  |  ├── Comment.astro
-|  |  ├── EnvelopeCard.astro
-|  |  ├── Footer.astro
-|  |  ├── FormattedDate.astro
-|  |  ├── Header.astro
-|  |  ├── HeaderLink.astro
-|  |  ├── License.astro
-|  |  ├── page
-|  |  |  ├── LinkCard.astro
-|  |  |  └── TimeLine.astro
-|  |  ├── SideBarCard.astro
-|  |  ├── SideBarCardFooter.astro
-|  |  ├── SideBarCardMenu.astro
-|  |  └── ThemeIcon.astro
-|  ├── consts.ts
-|  ├── content
-|  |  ├── blog
-|  |  |  ├── markdown-style-guide.md
-|  |  |  └── using-mdx.mdx
-|  |  └── config.ts
-|  ├── env.d.ts
-|  ├── layouts
-|  |  └── BaseLayout.astro
-|  ├── pages
-|  |  ├── about.astro
-|  |  ├── blog
-|  |  |  ├── tag
-|  |  |  ├── [...page].astro
-|  |  |  └── [...slug].astro
-|  |  ├── friend.astro
-|  |  ├── index.astro
-|  |  ├── index.mdx
-|  |  ├── project.astro
-|  |  └── rss.xml.js
-|  ├── scripts
-|  |  └── copybutton.mjs
-|  └── styles
-|     └── global.css
-├── tailwind.config.js
-├── tsconfig.json
-└── view.png
-```
+> Also Amazon Web Services like
+
+    - AWS lambda API Gateway for Movies API
+    - Amazon Bedrock for search and create NFTs picture wit AI
+
+
+<!--
+Users'll save money by searching cross Advertising and Subscribtion Video On Demande plateforms or there friends video library for there movie instead of VOD
+And earn on chatting about it on SocialFi
 
 ## ✒️ Article Information
 
@@ -126,4 +61,4 @@ This one is for Chainlink Block Magic 2024 Hackathon
 - [ ]
 - [ ]
 
-## 🎉 Thanks
+## 🎉 Thanks -->

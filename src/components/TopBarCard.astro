@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import Menu from "../components/SideBarCardMenu.astro"
 import Footer from "../components/SideBarCardFooter.astro"
 import { SITE_TITLE, SITE_DESCRIPTION, USER_NICKNAME, USER_DESCRIPTION, TRANSITION_API } from "../consts";
+//<!-- import Amplify, { Auth } from 'aws-amplify';
+//import './amplify.js'; -->
 const {
   name,
   desc,
@@ -12,13 +14,59 @@ const {
 ---
 
  <div class="flex">
-      
-      <div class="p-6">
-          # Hi there! 👋
-
-          This is the Frosti theme
-
-          A clean, elegant, and fast static blog template
+   <nav class="bg-gray-800 text-white py-4 px-6 w-full">
+    <div class="flex justify-between items-center">
+      <a href="/" class="text-lg font-bold">
+        {SITE_TITLE}
+      </a>
+      <div class="flex items-center space-x-4">
+        <button id="connect-wallet" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+          Connect Wallet
+        </button>
+        <a href="/sign-in" class="hover:text-gray-300">Sign In</a>
+        <a href="/login" class="hover:text-gray-300" id="email-login">Log In</a>
       </div>
-
     </div>
+  </nav>
+</div>
+
+<script>
+  const connectWalletButton = document.getElementById('connect-wallet');
+  const emailLoginButton = document.getElementById('email-login');
+
+  // MetaMask wallet connection logic
+  connectWalletButton.addEventListener('click', async () => {
+    try {
+      // Check if MetaMask is installed
+      if (!window.ethereum) {
+        alert('Please install MetaMask to connect your wallet.');
+        return;
+      }
+
+      // Request access to the user's MetaMask wallet
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+      // Get the user's Ethereum address
+      const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+      const userAddress = accounts[0];
+
+      console.log('Connected to MetaMask wallet:', userAddress);
+      // You can now use the user's Ethereum address for further interactions
+    } catch (error) {
+      console.error('Error connecting to MetaMask:', error);
+    }
+  });
+
+// // AWS Thirdparty connection logic
+//  emailLoginButton.addEventListener('click', async () => {
+//    try {
+//      // Sign in with email
+//      await Auth.signIn('your-email@example.com', 'your-password');
+//      console.log('User signed in successfully');
+//    } catch (error) {
+//      console.error('Error signing in:', error);
+//    }
+//  });
+
+
+</script>
