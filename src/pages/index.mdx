@@ -31,193 +31,68 @@ import LinkCard from '../components/page/LinkCard.astro';
     - **Comment System:** Engage with your readers effortlessly thanks to the built-in comment system powered by [Waline](https://waline.js.org/).
     - **Stylish Design:** Crafted with the elegance of [Tailwind CSS](https://tailwindcss.com/) and the charm of [daisyUI](https://daisyui.com/), Frosti offers visually stunning pages that captivate your audience.
 
-    ## Project Structure:
+**VDTK** is a feature of my other project. **Vid30** (The first streaming plateform on Web3.)
 
-    ```sh
-    \Frosti
-    ├── astro.config.mjs
-    ├── categories.txt
-    ├── package-lock.json
-    ├── package.json
-    ├── pnpm-lock.yaml
-    ├── public
-    |  ├── favicon.svg
-    |  ├── fonts
-    |  |  └── CascadiaCode.woff2
-    |  ├── home.webp
-    |  ├── profile.webp
-    |  └── view.png
-    ├── README.md
-    ├── README.zh-CN.md
-    ├── src
-    |  ├── components
-    |  |  ├── BaseCard.astro
-    |  |  ├── BaseHead.astro
-    |  |  ├── blog
-    |  |  |  ├── error.astro
-    |  |  |  ├── info.astro
-    |  |  |  ├── success.astro
-    |  |  |  └── warning.astro
-    |  |  ├── Comment.astro
-    |  |  ├── EnvelopeCard.astro
-    |  |  ├── Footer.astro
-    |  |  ├── FormattedDate.astro
-    |  |  ├── Header.astro
-    |  |  ├── HeaderLink.astro
-    |  |  ├── License.astro
-    |  |  ├── page
-    |  |  |  ├── LinkCard.astro
-    |  |  |  └── TimeLine.astro
-    |  |  ├── SideBarCard.astro
-    |  |  ├── SideBarCardFooter.astro
-    |  |  ├── SideBarCardMenu.astro
-    |  |  └── ThemeIcon.astro
-    |  ├── consts.ts
-    |  ├── content
-    |  |  ├── blog
-    |  |  |  ├── markdown-style-guide.md
-    |  |  |  └── using-mdx.mdx
-    |  |  └── config.ts
-    |  ├── env.d.ts
-    |  ├── layouts
-    |  |  └── BaseLayout.astro
-    |  ├── pages
-    |  |  ├── about.astro
-    |  |  ├── blog
-    |  |  |  ├── tag
-    |  |  |  ├── [...page].astro
-    |  |  |  └── [...slug].astro
-    |  |  ├── friend.astro
-    |  |  ├── index.astro
-    |  |  ├── index.mdx
-    |  |  ├── project.astro
-    |  |  └── rss.xml.js
-    |  ├── scripts
-    |  |  └── copybutton.mjs
-    |  └── styles
-    |     └── global.css
-    ├── tailwind.config.js
-    ├── tsconfig.json
-    └── view.png
+    ## Inspiration
+    Have you ever paid something which you already have or can have for **FREE**?
+    I do these with DVD I already have except the DVD player and a movie I could watch for free on TV the past day.
 
-  <BaseCard title="home">
+    ## What it does
+    VDTK is a Proof Of Reserve. It's a SAAS plateform for users to start making there decentralize video library of there favorite movies, actors, actress, directors, etc cross streaming plateform.
+    On Avertising, Subscription or Branding  Video on demande.
+    Even on there famillys and friends video library.
 
-    <div class="flex">
-      <svg width="200" height="100" class="clock">
-        <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"
-          ></feGaussianBlur>
-          <feOffset in="blur" dx="2.5" dy="2.5"></feOffset>
-        </filter>
+    Users :
+    With the help of Chainlink RWA, they will make there decentralize movies library backed by VDTK proof of Reserve (secret sauce).
+    VDTK will create some limited NFT by movie (1000).
+    They can sell them (NFT+Movie or the all library).
+    They can buy some movies from our futur marketplace or another user to complete there library.
+    Users can watch them on our streaming plateform VID30.
+    They can got datas about there movies collection to.
+    They can search there movie they want to see and get some proposal on **free plateform (even SVOD if subscribed)**, there friends/ familys one or a link for VOD.
 
-        <g>
-          <circle
-            id="shadow"
-            style="fill:rgba(0,0,0,0.1)"
-            cx="97"
-            cy="100"
-            r="87"
-            filter="url(#innerShadow)"></circle>
-          <circle
-            id="circle"
-            style="stroke: #FFF; stroke-width: 12px; fill:#20B7AF"
-            cx="100"
-            cy="100"
-            r="80"></circle>
-        </g>
-        <g>
-          <line
-            x1="100"
-            y1="100"
-            x2="100"
-            y2="55"
-            transform="rotate(80 100 100)"
-            style="stroke-width: 3px; stroke: #fffbf9;"
-            id="hourhand"
-          >
-            <animatetransform
-              attributeName="transform"
-              attributeType="XML"
-              type="rotate"
-              dur="43200s"
-              repeatCount="indefinite"></animatetransform>
-          </line>
-          <line
-            x1="100"
-            y1="100"
-            x2="100"
-            y2="40"
-            style="stroke-width: 4px; stroke: #fdfdfd;"
-            id="minutehand"
-          >
-            <animatetransform
-              attributeName="transform"
-              attributeType="XML"
-              type="rotate"
-              dur="3600s"
-              repeatCount="indefinite"></animatetransform>
-          </line>
-          <line
-            x1="100"
-            y1="100"
-            x2="100"
-            y2="30"
-            style="stroke-width: 2px; stroke: #C1EFED;"
-            id="secondhand"
-          >
-            <animatetransform
-              attributeName="transform"
-              attributeType="XML"
-              type="rotate"
-              dur="60s"
-              repeatCount="indefinite"></animatetransform>
-          </line>
-        </g>
-        <circle
-          id="center"
-          style="fill:#128A86; stroke: #C1EFED; stroke-width: 2px;"
-          cx="100"
-          cy="100"
-          r="3"></circle>
-      </svg>
-      <div class="p-6">
-          # Hi there! 👋
+    Users (**_Scenariste_** profil):
+    - will be rewarded for being Proof of Reserve for some new users.
+    - will get some task to do for AI data and get reward on crypto
+    - can do **Storage provider** or **Computer Provider** with Swan partner
+    - they will also store some movies for Vid30
 
-          This is the Frosti theme
+    ## How we built it
+    At the begginning it was a nextJS template and switch to Astro Js for this Hackathon.
+    Some Python private code on AWS API Gateway and Lambda for scrapping and make data and waiting to work with **QuickNode**.
+    Knowing Movies on Netflix, Prime, AVOD or BVOD can be crucial for VDTK and Vid30 and all DeFi on selling and buying movies on this ecosystem.
+    Some code on AWS Bedrock for making poster of movies collection or all library. Custom poster will be NFTs.
 
-          A clean, elegant, and fast static blog template
-      </div>
+    **Chainlink:**
+    Adding CCIP for connecting and messaging all protocol
+    Create Smart contract for subcribing (RWA)
+    _SocialFi with Lens protocol_
+    Chainlink Function on back-end and front-end.
+    **Front-end:**
+        - newsArchive. => https://github.com/jynadal/vdtk-hainlink/tree/rwa/src/lib/newsArchiveABI.json
+        - newsArchiveABI. => https://github.com/jynadal/vdtk-chainlink/tree/rwa/src/lib/newsArchive.js
+        - about page. => https://github.com/jynadal/vdtk-chainlink/tree/rwa/src/pages/about.mdx
 
-    </div>
+    ## Challenges we ran into
+    For this hackathon, I have to learn and build my MVP or Demo without blockchain and Artificiel Intelligent knowledge.
+    I will did it with an old computer, on a month where there are many interesting events for networking (like Paris Blockchain week, Viva Technology, some Meetup on eco &social impact and some pitch contest)
 
-  </BaseCard>
+    ## Accomplishments that we're proud of
+    I have a great idea and I found the way to manage all thing to make this idea real without a very good knowledge on web developpement, without money, only with what I learn on Youtube, Bootcamp Chainlink, ... .
+    And the "Get rich or died trying" mindsdet.
 
-    ```
+    ## What we learned
+    I discover many Chainlink product for my Start-Up project like.
+    RWA: A single NFT poster for users to put all his movies (NFTs)
+    Using **AI and NFTs**  (That already can be a single project)
+    Chainlink function
+    CCIP
 
-    ## How to Use:
-
-    Getting started with Frosti couldn't be easier! Simply use the `--template` parameter with the `create astro` command:
-
-    ```bash
-    npm create astro@latest -- --template EveSunMaple/Frosti
-    ```
-
-    ## Future Plans:
-
-    While Frosti is already an impressive template, the developers have exciting plans for its future development:
-
-    - **Table of Contents:** Enhance navigation with a table of contents feature.
-    - **Timeline Component:** Add a timeline component for showcasing chronological content.
-    - **Friends Link Component:** Foster community engagement with a friends link component.
-
-    ## Acknowledgments:
-
-    Frosti owes its existence to the contributions and inspiration from:
-
-    - **@[Saicaca](https://github.com/saicaca):** Whose insights were instrumental in the creation of this theme.
-    - **@[WRXinYue](https://github.com/WRXinYue):** For invaluable assistance during the early stages of development.
-
-    Whether you're a seasoned blogger or just dipping your toes into the world of blogging, Frosti provides the perfect platform to share your thoughts with the world. Try Frosti today and take your blogging experience to new heights!
+    ## What's next for VDTK
+    Knowing more about RWA, Oracles and launch my project in less than 1 month.
+    Creating my video library for demo in 2 weeks.
+    I'm collecting some movies because at least old video tape will be expensive.
+    Some person are interresting to join me as co-founder. I'm looking to have a awesome team of pirate. Some **underdog** person who **think outside the box**
 
   </BaseCard>
 </BaseLayout>
