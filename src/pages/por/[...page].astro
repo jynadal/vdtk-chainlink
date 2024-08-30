@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("por");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 5 });
 }
@@ -14,7 +14,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout PageID="blog">
+<BaseLayout PageID="por">
   <div class="envelope-background">
     {
       page.data.map((post) => (
@@ -22,7 +22,7 @@ const { page } = Astro.props;
           title={post.data.title}
           image={post.data.image}
           desc={post.data.description}
-          url={"/blog/" + post.slug}
+          url={"/por/" + post.slug}
           pubDate={post.data.pubDate}
           badge={post.data.badge}
           tags={post.data.tags}
@@ -46,7 +46,7 @@ const { page } = Astro.props;
           >
             <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
           </svg>{" "}
-          Recent posts MODIFY ON BLOG/...PAGE
+          Recent posts MODIFY ON por/...PAGE
         </a>
       ) : (
         <div />

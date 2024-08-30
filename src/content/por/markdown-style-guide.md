@@ -1,22 +1,44 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+title: 'Men In Black'
+description: 'Here is an example of Proof of Reserve from a real asset. We work and store DVD, VHS, Blue Ray or other devices for movies.'
 pubDate: 'Jul 01 2024'
-image: '/home.webp'
+image: '/moviesPict/MIB/Cover.jpg'
 tags:
-  - Makrdown
+  - dMovie
 badge: Guide
 ---
-
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 
 ## Headings
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
-# H1
+# All pictures of the asset
 
-## H2
+### All
+
+![blog placeholder](/public/moviesPict/MIB/All.jpg)
+
+### Cover
+
+![blog placeholder](/public/moviesPict/MIB/Cover.jpg)
+
+### Back
+
+![blog placeholder](/public/moviesPict/MIB/Back.jpg)
+
+### Bar Code
+
+![blog placeholder](/public/moviesPict/MIB/CodeB.jpg)
+
+### Side
+
+![blog placeholder](/public/moviesPict/MIB/Side.jpg)
+
+## Movie road map
+
+| Home          | Transfer     | dMovie    |
+| ------------- | ------------ | --------- |
+| _atic/garage_ | `On deliver` | **Enjoy** |
 
 ### H3
 
@@ -34,15 +56,30 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ## Images
 
-#### Syntax
+### JSON file for Samart Contract
 
 ```markdown mockup-code
-![Alt text](./full/or/relative/path/of/image)
+{
+"title": "Men In Black",
+"year": "1998",
+"support": "Video Tape",
+"barreCode": "3333290190951",
+"image": "https://teal-deliberate-cephalopod-769.mypinata.cloud/ipfs/QmWSan2AyK2ur7sQj9B6CJ9ofz6TxbCbkY3oLSnhYPE5aQ",
+"author": "jynadal",
+"ipfsLink":"https://teal-deliberate-cephalopod-769.mypinata.cloud/ipfs/",
+"realAssetPictures": {
+"pictureAll": "Qma6mfZfDkTyJaJNTB66yyV7oSLp18TYBwjjKugrncecQV",
+"pictureCover": "QmbqxxRuqGkVYK3u72cugui8Tq866Th6zg57RF1WdvByrL",
+"pictureBack": "QmZXrodD2doK2GQndDhJDT9LEAJpSSqhCCUw4WPypM3uzg",
+"pictureSide": "Qmah3gTW8ipzLWJRf4GebGixfWh2Np5rGHYn65aZK1hj9v",
+"pictureCodeB": "QmeXkWMuUTcu1BmYnoZhQcn2Y7F5xa3fm2UdDvtpQKFoGs",
+}
+}
 ```
 
-#### Output
+#### All pictures of the asset
 
-![blog placeholder](/home.webp)
+![blog placeholder](/public/moviesPict/MIB/All.jpg)
 
 ## Blockquotes
 
@@ -77,35 +114,3 @@ The blockquote element represents content that is quoted from another source, op
 > — <cite>Rob Pike[^1]</cite>
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-## Code Blocks
-
-#### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntac, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-#### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.

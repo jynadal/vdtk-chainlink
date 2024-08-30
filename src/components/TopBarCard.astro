@@ -31,31 +31,31 @@ const {
 </div>
 
 <script>
-  const connectWalletButton = document.getElementById('connect-wallet');
+ // const connectWalletButton = document.getElementById('connect-wallet');
   const emailLoginButton = document.getElementById('email-login');
 
   // MetaMask wallet connection logic
-  connectWalletButton.addEventListener('click', async () => {
-    try {
-      // Check if MetaMask is installed
-      if (!window.ethereum) {
-        alert('Please install MetaMask to connect your wallet.');
-        return;
-      }
+//   connectWalletButton.addEventListener('click', async () => {
+//     try {
+//       // Check if MetaMask is installed
+//       if (!window.ethereum) {
+//         alert('Please install MetaMask to connect your wallet.');
+//         return;
+//       }
 
-      // Request access to the user's MetaMask wallet
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
+//       // Request access to the user's MetaMask wallet
+//       await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-      // Get the user's Ethereum address
-      const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-      const userAddress = accounts[0];
+//       // Get the user's Ethereum address
+//       const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+//       const userAddress = accounts[0];
 
-      console.log('Connected to MetaMask wallet:', userAddress);
-      // You can now use the user's Ethereum address for further interactions
-    } catch (error) {
-      console.error('Error connecting to MetaMask:', error);
-    }
-  });
+//       console.log('Connected to MetaMask wallet:', userAddress);
+//       // You can now use the user's Ethereum address for further interactions
+//     } catch (error) {
+//       console.error('Error connecting to MetaMask:', error);
+//     }
+//   });
 
 // // AWS Thirdparty connection logic
 //  emailLoginButton.addEventListener('click', async () => {

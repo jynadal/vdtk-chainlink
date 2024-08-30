@@ -1,0 +1,89 @@
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseCard from '../components/BaseCard.astro';
+import error from '../components/blog/error.astro';
+import info from '../components/blog/info.astro';
+import success from '../components/blog/success.astro';
+import warn from '../components/blog/warning.astro';
+import TimeLine from '../components/page/TimeLine.astro';
+import LinkCard from '../components/page/LinkCard.astro';
+
+import fetch from 'node-fetch';
+import { JSDOM } from 'jsdom';
+// Import the getAllArticles function from the newsArchive.js file
+import getAllArticles from '../lib/newsArchive.js';
+
+// Initialize articles variable and error flag
+let articles;
+let errorOccurred = false;
+
+<BaseLayout PageID="about">
+  <BaseCard title="about">
+# About VDTK
+
+---
+
+## Brief introduction
+
+Frosti is a static blog template created by EveSunMaple using Astro, designed to replace bloated Hexo. The author is only a high school student, and there are many imperfections in this template that need to be modified. If you are interested, please visit the Github repository.
+
+## TimeLine
+
+---
+
+try {
+// Try to fetch all articles
+articles = await getAllArticles();
+} catch (error) {
+// If an error occurs, log it and set the error flag
+console.error("Failed to get articles:", error);
+articles = [];
+errorOccurred = true;
+}
+async function fetchOGData(url) {
+try {
+const response = await fetch(url);
+const html = await response.text();
+const dom = new JSDOM(html);
+const doc = dom.window.document;
+let ogTitle =
+doc.querySelector('meta[property="og:title"]')?.content || url;
+const ogImage = doc.querySelector('meta[property="og:image"]')?.content;
+return { ogTitle, ogImage, url };
+} catch (error) {
+console.error("Error fetching OG data:", error);
+return { ogTitle: "No title", ogImage: "No image", url };
+}
+}
+
+async function articlesWithOGData(articles) {
+return await Promise.all(articles.map(fetchOGData));
+}
+let allArticles = await articlesWithOGData(articles);
+
+---
+
+<body>
+    <h1>News Articles</h1>
+    {
+      // If an error occurred, display an error message
+      // Otherwise, display the list of articles
+      errorOccurred ? (
+        <p>Sorry, we're unable to fetch articles at the moment.</p>
+      ) : (
+        <ul>
+          {allArticles.map((article) => (
+            <li>
+              <article>
+                <a href={article.url}>
+                  <h2>{article?.ogTitle}</h2>
+                </a>
+                <img src={article?.ogImage} alt="" />
+              </article>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </body>
+    </BaseCard>
+</BaseLayout>

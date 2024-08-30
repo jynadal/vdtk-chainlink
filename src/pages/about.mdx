@@ -1,89 +1,66 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BaseCard from '../components/BaseCard.astro';
 import error from '../components/blog/error.astro';
-import info from '../components/blog/info.astro';
+import INFO from '../components/blog/info.astro';
 import success from '../components/blog/success.astro';
 import warn from '../components/blog/warning.astro';
 import TimeLine from '../components/page/TimeLine.astro';
 import LinkCard from '../components/page/LinkCard.astro';
 
-import fetch from "node-fetch";
-import { JSDOM } from "jsdom";
-// Import the getAllArticles function from the newsArchive.js file
-import getAllArticles from "../lib/newsArchive.js";
+<BaseLayout PageID="project">
+  <BaseCard title="Frosti"
+            image="https://frosti.saroprock.com/view.png">
 
-// Initialize articles variable and error flag
-let articles;
-let errorOccurred = false;
+{/* <INFO>
+  <button class="btn">[VDTK](https://github.com/jynadal/)</button>
+</INFO> */}
 
-
-<BaseLayout PageID="about">
-  <BaseCard title="about">
-# About VDTK
+# 🧊 Introduction
 
 ---
 
-## Brief introduction
+**Presenting of VDTK. It's the borring part and the most important of this project.**
 
-Frosti is a static blog template created by EveSunMaple using Astro, designed to replace bloated Hexo. The author is only a high school student, and there are many imperfections in this template that need to be modified. If you are interested, please visit the Github repository.
+![Frosti](https://frosti.saroprock.com/view.png)
 
-## TimeLine
+In search of a static blog template that's as sleek as it is speedy? Look no further than Frosti! Developed with [Astro](https://astro.build/), Frosti offers a seamless and stylish solution for bloggers who value both aesthetics and performance.
 
----
+## Key Features:
 
-try {
-  // Try to fetch all articles
-  articles = await getAllArticles();
-} catch (error) {
-  // If an error occurs, log it and set the error flag
-  console.error("Failed to get articles:", error);
-  articles = [];
-  errorOccurred = true;
-}
-async function fetchOGData(url) {
-  try {
-    const response = await fetch(url);
-    const html = await response.text();
-    const dom = new JSDOM(html);
-    const doc = dom.window.document;
-    let ogTitle =
-      doc.querySelector('meta[property="og:title"]')?.content || url;
-    const ogImage = doc.querySelector('meta[property="og:image"]')?.content;
-    return { ogTitle, ogImage, url };
-  } catch (error) {
-    console.error("Error fetching OG data:", error);
-    return { ogTitle: "No title", ogImage: "No image", url };
-  }
-}
+- **Simplicity:** Frosti boasts a minimalist design that keeps your content front and center.
+- **Speed:** With lightning-fast loading times, Frosti ensures your readers won't be left twiddling their thumbs.
+- **Day/Night Modes:** Enjoy your reading experience in both light and dark modes for optimal comfort.
+- **Component Rich:** Frosti comes packed with a variety of components to enhance your articles and pages.
+- **Comment System:** Engage with your readers effortlessly thanks to the built-in comment system powered by [Waline](https://waline.js.org/).
+- **Stylish Design:** Crafted with the elegance of [Tailwind CSS](https://tailwindcss.com/) and the charm of [daisyUI](https://daisyui.com/), Frosti offers visually stunning pages that captivate your audience.
 
-async function articlesWithOGData(articles) {
-  return await Promise.all(articles.map(fetchOGData));
-}
-let allArticles = await articlesWithOGData(articles);
----
+## Project Structure:
 
-<body>
-    <h1>News Articles</h1>
-    {
-      // If an error occurred, display an error message
-      // Otherwise, display the list of articles
-      errorOccurred ? (
-        <p>Sorry, we're unable to fetch articles at the moment.</p>
-      ) : (
-        <ul>
-          {allArticles.map((article) => (
-            <li>
-              <article>
-                <a href={article.url}>
-                  <h2>{article?.ogTitle}</h2>
-                </a>
-                <img src={article?.ogImage} alt="" />
-              </article>
-            </li>
-          ))}
-        </ul>
-      )
-    }
-  </body>
-    </BaseCard>
+
+## How to Use:
+
+Getting started with Frosti couldn't be easier! Simply use the `--template` parameter with the `create astro` command:
+
+```bash
+npm create astro@latest -- --template EveSunMaple/Frosti
+```
+
+## Future Plans:
+
+While Frosti is already an impressive template, the developers have exciting plans for its future development:
+
+- **Table of Contents:** Enhance navigation with a table of contents feature.
+- **Timeline Component:** Add a timeline component for showcasing chronological content.
+- **Friends Link Component:** Foster community engagement with a friends link component.
+
+## Acknowledgments:
+
+Frosti owes its existence to the contributions and inspiration from:
+
+- **@[Saicaca](https://github.com/saicaca):** Whose insights were instrumental in the creation of this theme.
+- **@[WRXinYue](https://github.com/WRXinYue):** For invaluable assistance during the early stages of development.
+
+Whether you're a seasoned blogger or just dipping your toes into the world of blogging, Frosti provides the perfect platform to share your thoughts with the world. Try Frosti today and take your blogging experience to new heights!
+
+  </BaseCard>
 </BaseLayout>

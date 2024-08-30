@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "@aws-amplify/auth": "^6.3.4",
+    "@chainlink/external-adapter": "^0.2.6",
     "add": "^2.0.6",
     "astro": "^4.9.2",
     "aws-amplify": "^6.3.4",
