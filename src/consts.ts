@@ -3,6 +3,6 @@
 
 export const SITE_TITLE = 'VDTK';
 export const SITE_DESCRIPTION = 'Welcome to VDTK All your movies in one app!';
-export const USER_NICKNAME = 'JohnJohn';
-export const USER_DESCRIPTION = 'a director';
+export const USER_NICKNAME = 'JohnYves';
+export const USER_DESCRIPTION = 'director';
 export const TRANSITION_API = true;
